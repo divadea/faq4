@@ -22,4 +22,5 @@ class AnswerTest extends TestCase
         $answer->question()->associate($question);
         $this->assertTrue($answer->save());
     }
+    
 }
