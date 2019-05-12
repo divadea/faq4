@@ -2,6 +2,10 @@
 
 namespace App\Jobs;
 
+use App\User;
+use App\Answer;
+use App\Profile;
+use App\Question;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
