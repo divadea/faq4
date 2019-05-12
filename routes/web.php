@@ -1,4 +1,10 @@
 <?php
+
+use App\Mail\UserRegistered;
+use Illuminate\Support\Facades\Mail;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +34,5 @@ Route::get('/questions/{question_id}/answers/{answer_id}/edit', 'AnswerControlle
 Route::post('/questions/{question_id}/answers/', 'AnswerController@store')->name('answers.store');
 Route::patch('/questions/{question_id}/answer/{answer_id}', 'AnswerController@update')->name('answers.update');
 Route::delete('/questions/{question_id}/answer/{answer_id}', 'AnswerController@destroy')->name('answers.destroy');
-Route::resources([
-    'questions' => 'QuestionController',
-]);
+Route::resources(['questions' => 'QuestionController',]);
+Route::get('/',function(){Mail::to('test@example.com')->send(new UserRegistered);return view('welcome');});
