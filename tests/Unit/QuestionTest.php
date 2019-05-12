@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class QuestionTest extends TestCase
 {
     /**
-     * A basic unit test example.
+     * A basic test example.
      *
      * @return void
      */
