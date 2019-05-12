@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\Somejob;
 use App\Mail\UserRegistered;
 use Illuminate\Support\Facades\Mail;
 
@@ -35,4 +36,11 @@ Route::post('/questions/{question_id}/answers/', 'AnswerController@store')->name
 Route::patch('/questions/{question_id}/answer/{answer_id}', 'AnswerController@update')->name('answers.update');
 Route::delete('/questions/{question_id}/answer/{answer_id}', 'AnswerController@destroy')->name('answers.destroy');
 Route::resources(['questions' => 'QuestionController',]);
-Route::get('/',function(){Mail::to('test@example.com')->send(new UserRegistered);return view('welcome');});
+Route::get('/',function(){Mail::to('test@example.com')->queue(new UserRegistered);return view('welcome');});
+Route::get('/jobs/{jobs}',function($jobs){for($i=0; $i < $jobs;$i++){SomeJob::dispatch();}});
+
+
+
+
+
+
