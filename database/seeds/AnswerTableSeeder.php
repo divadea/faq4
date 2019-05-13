@@ -8,7 +8,8 @@ class AnswersTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {        $users = App\User::inRandomOrder();
+    {
+        $users = App\User::inRandomOrder();
         for ($i = 1; $i <= 6; $i++) {
             $users->each(function ($user) {
                 $question = App\Question::inRandomOrder()->first();
