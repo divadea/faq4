@@ -86,6 +86,7 @@ class AnswerController extends Controller
             'body.required' => 'Body is required',
             'body.min' => 'Body must be at least 5 characters',
         ]);
+        
         $answer = Answer::find($answer);
         $answer->body = $request->body;
         $answer->save();
@@ -101,6 +102,6 @@ class AnswerController extends Controller
     {
         $answer = Answer::find($answer);
         $answer->delete();
-        return redirect()->route('questions.show',['question_id' => $question])->with('message', 'Deleted');
+        return redirect()->route('questions.show',['question_id' => $question])->with('message', 'Delete');
     }
 }
