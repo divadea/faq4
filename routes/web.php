@@ -1,4 +1,7 @@
 <?php
+use App\Mail\UserRegistered;
+use Illuminate\Support\Facades\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,8 +13,11 @@
 |
 */
 Route::get('/', function () {
+    Mail::to('test@example.com')->queue(new User);
     return view('welcome');
-})->name('money') ;
+    
+});
+Route::get('/', function () {return view('welcome');})->name('money') ;
 Route::get('/thankyou', function () {return view('thankyou');})->name('thankyou') ;
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

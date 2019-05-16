@@ -15,7 +15,7 @@ Maitrap.IO
     MAIL_FROM_ADDRESS=from@example.com
     MAIL_FROM_NAME=Example
 
-5) THen save your .env file
+5) Then save your .env file
 6) In order to test the queue, run php artisan queue:listen on command line.  This turns on the server to listen to the queue
 and waits to se if an email is triggered.
 Then go and register to get an email, which will trigger after a 5 sec.
